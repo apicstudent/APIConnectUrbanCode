@@ -1,0 +1,27 @@
+---
+product: "1.0.0"
+info:
+  name: "Accounts-Product"
+  title: "Accounts Product"
+  version: "1.0.0"
+visibility:
+  view:
+    enabled: true
+    type: "public"
+    tags: []
+    orgs: []
+  subscribe:
+    enabled: true
+    type: "authenticated"
+    tags: []
+    orgs: []
+apis:
+  Accounts-Application:
+    id: "56df2fabe4b009184f1db373"
+plans:
+  AccountsPublicPlan:
+    title: "Account Public Plan"
+    rate-limit:
+      hard-limit: false
+      value: "unlimited"
+    apis: {}

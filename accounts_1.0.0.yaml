@@ -1,0 +1,279 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Accounts"
+  x-ibm-name: "Accounts-Application"
+  description: "Accounts application"
+basePath: "/api"
+consumes:
+- "application/json"
+- "application/x-www-form-urlencoded"
+- "application/xml"
+- "text/xml"
+produces:
+- "application/json"
+- "application/xml"
+- "text/xml"
+- "application/javascript"
+- "text/javascript"
+paths:
+  /Accounts:
+    post:
+      tags:
+      - "Account"
+      summary: "Create a new instance of the model and persist it into the data source."
+      operationId: "Account.create"
+      parameters:
+      - name: "data"
+        in: "body"
+        description: "Model instance data"
+        required: false
+        schema:
+          $ref: "#/definitions/Account"
+      responses:
+        200:
+          description: "Request was successful"
+          schema:
+            $ref: "#/definitions/Account"
+      deprecated: false
+    put:
+      tags:
+      - "Account"
+      summary: "Update an existing model instance or insert a new one into the data\
+        \ source."
+      operationId: "Account.upsert"
+      parameters:
+      - name: "data"
+        in: "body"
+        description: "Model instance data"
+        required: false
+        schema:
+          $ref: "#/definitions/Account"
+      responses:
+        200:
+          description: "Request was successful"
+          schema:
+            $ref: "#/definitions/Account"
+      deprecated: false
+    get:
+      tags:
+      - "Account"
+      summary: "Find all instances of the model matched by filter from the data source."
+      operationId: "Account.find"
+      parameters:
+      - name: "filter"
+        in: "query"
+        description: "Filter defining fields, where, include, order, offset, and limit"
+        required: false
+        type: "string"
+        format: "JSON"
+      responses:
+        200:
+          description: "Request was successful"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Account"
+      deprecated: false
+  /Accounts/{id}/exists:
+    get:
+      tags:
+      - "Account"
+      summary: "Check whether a model instance exists in the data source."
+      operationId: "Account.exists"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Model id"
+        required: true
+        type: "string"
+        format: "JSON"
+      responses:
+        200:
+          description: "Request was successful"
+          schema:
+            type: "object"
+      deprecated: false
+  /Accounts/{id}:
+    get:
+      tags:
+      - "Account"
+      summary: "Find a model instance by id from the data source."
+      operationId: "Account.findById"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Model id"
+        required: true
+        type: "string"
+        format: "JSON"
+      - name: "filter"
+        in: "query"
+        description: "Filter defining fields and include"
+        required: false
+        type: "string"
+        format: "JSON"
+      responses:
+        200:
+          description: "Request was successful"
+          schema:
+            $ref: "#/definitions/Account"
+      deprecated: false
+    delete:
+      tags:
+      - "Account"
+      summary: "Delete a model instance by id from the data source."
+      operationId: "Account.deleteById"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Model id"
+        required: true
+        type: "string"
+        format: "JSON"
+      responses:
+        204:
+          description: "Request was successful"
+      deprecated: false
+    put:
+      tags:
+      - "Account"
+      summary: "Update attributes for a model instance and persist it into the data\
+        \ source."
+      operationId: "Account.prototype.updateAttributes"
+      parameters:
+      - name: "data"
+        in: "body"
+        description: "An object of model property name/value pairs"
+        required: false
+        schema:
+          $ref: "#/definitions/Account"
+      - name: "id"
+        in: "path"
+        description: "PersistedModel id"
+        required: true
+        type: "string"
+        format: "JSON"
+      responses:
+        200:
+          description: "Request was successful"
+          schema:
+            $ref: "#/definitions/Account"
+      deprecated: false
+  /Accounts/findOne:
+    get:
+      tags:
+      - "Account"
+      summary: "Find first instance of the model matched by filter from the data source."
+      operationId: "Account.findOne"
+      parameters:
+      - name: "filter"
+        in: "query"
+        description: "Filter defining fields, where, include, order, offset, and limit"
+        required: false
+        type: "string"
+        format: "JSON"
+      responses:
+        200:
+          description: "Request was successful"
+          schema:
+            $ref: "#/definitions/Account"
+      deprecated: false
+  /Accounts/update:
+    post:
+      tags:
+      - "Account"
+      summary: "Update instances of the model matched by where from the data source."
+      operationId: "Account.updateAll"
+      parameters:
+      - name: "where"
+        in: "query"
+        description: "Criteria to match model instances"
+        required: false
+        type: "string"
+        format: "JSON"
+      - name: "data"
+        in: "body"
+        description: "An object of model property name/value pairs"
+        required: false
+        schema:
+          $ref: "#/definitions/Account"
+      responses:
+        204:
+          description: "Request was successful"
+      deprecated: false
+  /Accounts/count:
+    get:
+      tags:
+      - "Account"
+      summary: "Count instances of the model matched by where from the data source."
+      operationId: "Account.count"
+      parameters:
+      - name: "where"
+        in: "query"
+        description: "Criteria to match model instances"
+        required: false
+        type: "string"
+        format: "JSON"
+      responses:
+        200:
+          description: "Request was successful"
+          schema:
+            type: "object"
+      deprecated: false
+  /Accounts/change-stream: {}
+definitions:
+  x-any:
+    properties: {}
+  Account:
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      type:
+        type: "string"
+      balance:
+        type: "number"
+        format: "double"
+      status:
+        type: "string"
+      creditLimit:
+        type: "number"
+        format: "double"
+    required:
+    - "id"
+    additionalProperties: false
+tags:
+- name: "Account"
+x-ibm-configuration:
+  enforced: true
+  testable: true
+  phase: "realized"
+  cors:
+    enabled: true
+  assembly:
+    execute:
+    - proxy:
+        title: "Accounts Proxy"
+        timeout: 60
+        verb: "keep"
+        cache-response: "protocol"
+        cache-ttl: 900
+        description: "Proxy Accounts MicroService"
+        target-url: "http://192.168.225.10:3001/api/Accounts"
+    - activity-log:
+        title: "Log Accounts API"
+        content: "payload"
+        error-content: "payload"
+    catch:
+    - default: []
+securityDefinitions:
+  api-key-1:
+    type: "apiKey"
+    description: "API Key"
+    in: "header"
+    name: "X-IBM-Client-Id"
+security:
+- api-key-1: []
