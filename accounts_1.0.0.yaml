@@ -3,8 +3,8 @@ swagger: "2.0"
 info:
   version: "1.0.0"
   title: "Accounts"
-  x-ibm-name: "Accounts-Application"
-  description: "Accounts application"
+  x-ibm-name: "accounts"
+  description: "accounts"
 basePath: "/api"
 consumes:
 - "application/json"
