@@ -16,7 +16,7 @@ visibility:
     tags: []
     orgs: []
 apis:
-  Accounts-Application:
+  Accounts:
     id: "56df2fabe4b009184f1db373"
 plans:
   AccountsPublicPlan:
