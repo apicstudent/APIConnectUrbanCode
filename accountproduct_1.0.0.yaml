@@ -16,8 +16,8 @@ visibility:
     tags: []
     orgs: []
 apis:
-  Accounts:
-    id: "56df2fabe4b009184f1db373"
+  accounts:
+    $ref: "accounts_1.0.0.yaml"
 plans:
   AccountsPublicPlan:
     title: "Account Public Plan"
