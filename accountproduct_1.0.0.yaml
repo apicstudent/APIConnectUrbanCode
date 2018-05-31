@@ -1,8 +1,8 @@
 ---
 product: "1.0.0"
 info:
-  name: "Accounts-Product"
-  title: "Accounts Product"
+  name: "accountproduct"
+  title: "accountproduct"
   version: "1.0.0"
 visibility:
   view:
